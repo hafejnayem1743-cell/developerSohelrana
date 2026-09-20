@@ -15,9 +15,7 @@ import { CourseDetailPage } from './pages/CourseDetailPage';
 import { ServicesPage } from './pages/ServicesPage';
 import { ServicePortfolioPage } from './pages/ServicePortfolioPage';
 import { ServiceCustomWebPage } from './pages/ServiceCustomWebPage';
-import { ProjectsPage } from './pages/ProjectsPage';
 import { ContactPage } from './pages/ContactPage';
-import { FiverrPage } from './pages/FiverrPage';
 import { PaymentPage } from './pages/PaymentPage';
 
 // Admin Dashboard Page
@@ -107,26 +105,10 @@ export default function App() {
             }
           />
           <Route
-            path="/projects"
-            element={
-              <PublicLayout>
-                <ProjectsPage />
-              </PublicLayout>
-            }
-          />
-          <Route
             path="/contact"
             element={
               <PublicLayout>
                 <ContactPage />
-              </PublicLayout>
-            }
-          />
-          <Route
-            path="/fiverr"
-            element={
-              <PublicLayout>
-                <FiverrPage />
               </PublicLayout>
             }
           />

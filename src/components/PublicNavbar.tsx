@@ -22,7 +22,6 @@ export const PublicNavbar: React.FC = () => {
     { name: 'Skills', path: '/skills' },
     { name: 'Courses', path: '/courses' },
     { name: 'Services', path: '/services' },
-    { name: 'Projects', path: '/projects' },
     { name: 'Contact', path: '/contact' },
   ];
 

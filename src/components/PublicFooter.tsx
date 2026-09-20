@@ -3,10 +3,6 @@ import { Link } from 'react-router-dom';
 import { useApp } from '../context/AppContext';
 import {
   ArrowUp,
-  Github,
-  Linkedin,
-  Send,
-  ExternalLink,
   Code2,
   Mail,
   CheckCircle2,
@@ -14,7 +10,7 @@ import {
 
 export const PublicFooter: React.FC = () => {
   const { data } = useApp();
-  const { siteSettings, socialLinks } = data;
+  const { siteSettings } = data;
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -80,42 +76,12 @@ export const PublicFooter: React.FC = () => {
             </ul>
           </div>
 
-          {/* Col 3: Verified Developer Channels */}
+          {/* Col 3: Contact */}
           <div className="space-y-3">
             <span className="text-xs font-mono uppercase tracking-widest text-slate-300 font-semibold block">
-              Channels & Inquiries
+              Contact
             </span>
             <div className="space-y-2.5 text-xs font-mono">
-              <a
-                href={socialLinks.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-slate-400 hover:text-slate-200 transition-colors"
-              >
-                <span>GitHub Repositories</span>
-                <ExternalLink className="w-3 h-3" />
-              </a>
-
-              <a
-                href={socialLinks.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-slate-400 hover:text-slate-200 transition-colors"
-              >
-                <span>LinkedIn Network</span>
-                <ExternalLink className="w-3 h-3" />
-              </a>
-
-              <a
-                href={socialLinks.telegram}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-slate-400 hover:text-slate-200 transition-colors"
-              >
-                <span>Telegram Direct Dispatch</span>
-                <ExternalLink className="w-3 h-3" />
-              </a>
-
               <Link
                 to="/contact"
                 className="flex items-center gap-2 text-cyan-400 hover:underline pt-1"

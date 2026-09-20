@@ -3,7 +3,6 @@ import { useApp } from '../context/AppContext';
 import {
   Mail,
   Send,
-  ExternalLink,
   Paperclip,
   CheckCircle2,
   Clock,
@@ -16,12 +15,6 @@ import {
 export const ContactPage: React.FC = () => {
   const { data, submitContactMessage, isLocalOnlyMode } = useApp();
   const { socialLinks, siteSettings } = data;
-
-  const telegramHref = socialLinks.telegram
-    ? socialLinks.telegram.startsWith('http')
-      ? socialLinks.telegram
-      : `https://t.me/${socialLinks.telegram.replace('@', '').trim()}`
-    : 'https://t.me';
 
   const [formData, setFormData] = useState({
     name: '',
@@ -176,54 +169,30 @@ export const ContactPage: React.FC = () => {
                 </div>
               </div>
 
-              {/* Verified Channels (Direct Email & Telegram) */}
+              {/* Official Contact Channel */}
               <div>
                 <span className="text-xs font-mono uppercase tracking-widest text-slate-400 block mb-3 font-semibold">
-                  Official Communication Channels:
+                  Official Contact Channel:
                 </span>
-                <div className="space-y-2.5">
-                  <a
-                    href={`mailto:${socialLinks.email}`}
-                    className="p-3.5 rounded-xl bg-slate-900/90 hover:bg-slate-800/90 border border-cyan-500/30 hover:border-cyan-400/60 flex items-center justify-between transition-all group"
-                  >
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-lg bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 flex items-center justify-center">
-                        <Mail className="w-4 h-4" />
+                <a
+                  href={`mailto:${socialLinks.email}`}
+                  className="p-3.5 rounded-xl bg-slate-900/90 hover:bg-slate-800/90 border border-cyan-500/30 hover:border-cyan-400/60 flex items-center justify-between transition-all group"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-lg bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 flex items-center justify-center">
+                      <Mail className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <div className="text-[10px] font-mono text-cyan-400 uppercase tracking-wider font-bold">
+                        Direct Email
                       </div>
-                      <div>
-                        <div className="text-[10px] font-mono text-cyan-400 uppercase tracking-wider font-bold">
-                          Direct Email
-                        </div>
-                        <div className="text-xs font-mono text-slate-200 group-hover:text-white transition-colors">
-                          {socialLinks.email}
-                        </div>
+                      <div className="text-xs font-mono text-slate-200 group-hover:text-white transition-colors break-all">
+                        {socialLinks.email || 'Email not configured'}
                       </div>
                     </div>
-                    <ExternalLink className="w-3.5 h-3.5 text-cyan-400/60 group-hover:text-cyan-300 transition-colors" />
-                  </a>
-
-                  <a
-                    href={telegramHref}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-3.5 rounded-xl bg-slate-900/90 hover:bg-slate-800/90 border border-sky-500/30 hover:border-sky-400/60 flex items-center justify-between transition-all group"
-                  >
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-lg bg-sky-500/10 border border-sky-500/20 text-sky-400 flex items-center justify-center">
-                        <Send className="w-4 h-4" />
-                      </div>
-                      <div>
-                        <div className="text-[10px] font-mono text-sky-400 uppercase tracking-wider font-bold">
-                          Telegram Channel / Chat
-                        </div>
-                        <div className="text-xs font-mono text-slate-200 group-hover:text-white transition-colors">
-                          {socialLinks.telegram || 'Telegram Direct'}
-                        </div>
-                      </div>
-                    </div>
-                    <ExternalLink className="w-3.5 h-3.5 text-sky-400/60 group-hover:text-sky-300 transition-colors" />
-                  </a>
-                </div>
+                  </div>
+                  <span className="text-xs font-mono text-cyan-400/70">Email</span>
+                </a>
               </div>
             </div>
           </div>

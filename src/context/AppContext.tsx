@@ -67,7 +67,7 @@ const AUTH_KEY = 'sohel_rana_admin_auth_v2026';
 const CREDENTIAL_HASH_KEY = 'sohel_rana_admin_credential_hash_v2026';
 const CREDENTIAL_SALT_KEY = 'sohel_rana_admin_credential_salt_v2026';
 const CREDENTIAL_VERSION_KEY = 'sohel_rana_admin_credential_version_v2026';
-const CURRENT_CREDENTIAL_VERSION = '2';
+const CURRENT_CREDENTIAL_VERSION = '3';
 const DEFAULT_ADMIN_HASH = '7b54bfb4dcd81d3a68088bc61d73031c82277a5f88e923fe9a695df636f76c8e';
 const DEFAULT_ADMIN_SALT = '8f3c1a7d5b2946e1c0f9a2b7d4e6f815';
 const isLocalOnlyMode = true;
@@ -106,6 +106,7 @@ const ensureDefaultAdminCredential = () => {
       localStorage.setItem(CREDENTIAL_SALT_KEY, DEFAULT_ADMIN_SALT);
       localStorage.setItem(CREDENTIAL_HASH_KEY, DEFAULT_ADMIN_HASH);
       localStorage.setItem(CREDENTIAL_VERSION_KEY, CURRENT_CREDENTIAL_VERSION);
+      localStorage.removeItem(AUTH_KEY);
     }
   } catch {
     // Storage errors are handled by the normal credential checks below.
