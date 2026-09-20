@@ -266,20 +266,20 @@ export const ContactPage: React.FC = () => {
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                    {/* Telegram / WhatsApp / Contact */}
+                    {/* Additional Contact Information */}
                     <div>
                       <label
                         htmlFor="public-contact-info"
                         className="block text-xs font-mono uppercase tracking-wider text-slate-400 mb-2"
                       >
-                        Telegram / WhatsApp / Contact (Optional)
+                        Contact Information (Optional)
                       </label>
                       <input
                         id="public-contact-info"
                         type="text"
                         value={formData.contactInfo}
                         onChange={(e) => setFormData({ ...formData, contactInfo: e.target.value })}
-                        placeholder="e.g. @telegram or +1 234 567..."
+                        placeholder="e.g. phone number or preferred contact method"
                         className="w-full px-4 py-3 rounded-xl bg-slate-950/80 border border-white/10 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-cyan-400 font-mono transition-all"
                       />
                     </div>
