@@ -1,0 +1,9 @@
+{
+  "name": "Sohel Rana - Full-Stack Developer Portfolio",
+  "description": "Premium responsive portfolio for Sohel Rana with courses, services, projects, contact, payment request, and local admin management.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "CLIENT_SIDE_PORTFOLIO",
+    "LOCAL_ADMIN_CONSOLE"
+  ]
+}
